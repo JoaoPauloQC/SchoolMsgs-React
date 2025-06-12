@@ -41,8 +41,8 @@ export default function NewMsg(){
     }
     
     return (
-    <div className="formconatiner">
-        <div className="form">
+    <div className="formcontainer wrapper">
+        <div className="formnew">
             <form action="" onSubmit={handlesubmit}>
 
                 <p>Type your new msg</p>

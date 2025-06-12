@@ -7,8 +7,11 @@ export default function Nav(){
                 <div className='wrapper'>
                     <div className='nav__container'>
                         <nav>
-                            <Link to="/">Home</Link>
-
+                            <ul>
+                                <Link to="/">Home</Link>
+                                <Link to="/msgs">Messages</Link>
+                                <Link to="/newmsg">+</Link>
+                            </ul>
                         </nav>
                     </div>
                 </div>

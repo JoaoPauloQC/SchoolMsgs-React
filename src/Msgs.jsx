@@ -26,15 +26,17 @@ export default function Msgs(){
     },[])
 
     return(
-        <div>
-        <ul>
-            {msgs.map( msg =>(
-                <div className="msg" key={msg.id} id={`msg ${msg.id}`}>
-                    <li value={msg.id}>{msg.name}</li>
-                    <button onClick={() => handlebutton(msg)}>View Details</button>
-                </div>
-            ))}
-        </ul>
+        <div className="msgs__container">
+            <div className="wrapper">
+                <ul>
+                    {msgs.map( msg =>(
+                        <div className="msgs__msg" key={msg.id} id={`msg ${msg.id}`}>
+                            <li value={msg.id}>{msg.name}</li>
+                            <button onClick={() => handlebutton(msg)} className="lightbluebtn">View Details</button>
+                        </div>
+                    ))}
+                </ul>
+            </div>
         </div>
 
     )

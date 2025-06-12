@@ -1,10 +1,10 @@
-import { useState , useEffect } from "react"
+import { useState , useEffect, useRef } from "react"
 import { useLocation, useParams } from "react-router-dom"
 
 export default function SeeDetail(){
     
     const [msg_,setmsg_] = useState({})
-    
+    let wasfetched = useRef(false)
     const { id } = useParams()
     const iddecoded = decodeURI(id)
     console.log(iddecoded)
@@ -20,7 +20,7 @@ export default function SeeDetail(){
                         if(msg.id == iddecoded){
 
                             setmsg_(msg)
-                            alert('encontrado')
+                            
                         }
                         
                         
@@ -32,6 +32,13 @@ export default function SeeDetail(){
                 catch(e){
                     console.log(e.message)
                 }
+                console.log(wasfetched.current)
+                if(!wasfetched.current){
+                    if(!msg_.id){
+                        alert('encontrei')
+                    }
+                    wasfetched.current = true
+                }
             }
     
             fetchMsgs()
@@ -41,8 +48,10 @@ export default function SeeDetail(){
     return (
         <div className="details wrapper">
             <div className="details__container">
-                <div className="details__text">
-                    <p>{msg_.name}</p>
+                <div className="details__card">
+                    <div className="details__text">
+                        <p>{msg_.name}</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,31 +7,235 @@
 .navbar {
   height: 50px;
 }
+.navbar::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 0.1px;
+  background-color: rgba(198, 198, 198, 0.4392156863);
+}
 
 .nav__container {
   width: 100%;
   height: 100%;
   display: grid;
-  justify-content: end;
 }
 .nav__container a {
   text-decoration: none;
   color: #000;
-  font-weight: 100;
+  font-weight: 200;
+  font-size: 16px;
 }
 .nav__container nav {
+  width: 100%;
   height: 50px;
   display: grid;
   align-items: center;
+  justify-items: end;
+}
+.nav__container nav ul {
+  padding-inline: 0;
+  margin: 0;
+  width: 30%;
+  justify-content: space-between;
+  display: flex;
 }
 
-h1 {
+* {
   margin: 0;
+  font-family: Montserrat;
 }
 
 .content {
-  background-color: green;
+  margin-top: 200px;
+  width: auto;
+  box-sizing: border-box;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 50% 50%;
   font-size: 20px;
+  position: relative;
+  animation: fadedown 2s ease-out;
+  height: 350px;
+}
+.content__left {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: start;
+}
+.content__left h1 {
+  font-size: 60px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.content__left__imgcontainer {
+  display: grid;
+  justify-content: center;
+}
+.content__left__imgcontainer img {
+  width: 125px;
+}
+
+@keyframes fadedown {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.content__container {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.content .form {
+  width: 100%;
+  display: grid;
+  height: 250px;
+}
+.content .form form {
+  height: 100%;
+  padding: 20px;
+  background-color: #fffffe;
+  border: 0.25px solid #10cfe3;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  justify-items: center;
+  align-content: space-evenly;
+  border-radius: 15px;
+}
+.content .form form input {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  padding: 7.5px;
+  height: 30px;
+  outline: none;
+  transition: 0.5s ease-out;
+}
+.content .form form input:hover {
+  border: 1px solid #10cfe3;
+}
+.content .form form button {
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #1732a6;
+  color: #ffffff;
+  height: 30px;
+  width: 100px;
+  transition: 0.2s ease-out;
+}
+.content .form form button:hover {
+  border: 0.5px solid #1732a6;
+  background-color: transparent;
+  color: #1732a6;
+}
+
+.formnew {
+  margin-top: 150px;
+  display: grid;
+  justify-content: center;
+  padding: 50px;
+  box-sizing: border-box;
+  border: 1px solid #00d7e5;
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formnew form {
+  display: grid;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+  align-items: center;
+}
+.formnew form p {
+  text-align: center;
+}
+.formnew form input {
+  width: 300px;
+  padding: 5px 12.5px;
+  box-sizing: border-box;
+  outline: none;
+  border: 0.1px solid rgba(0, 0, 0, 0.0901960784);
+  border-radius: 10px;
+  height: 35px;
+}
+.formnew form button {
+  color: #00d7e5;
+  background: transparent;
+  border: 1px solid #00d7e5;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.formnew form button:hover {
+  color: #ffffff;
+  background-color: #00d7e5;
+  border: 1px solid #009ce5;
+}
+
+.details {
+  margin-top: 30px;
+}
+.details__card {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.0901960784);
+  box-sizing: border-box;
+}
+
+.msgs__container {
+  margin-top: 100px;
+  width: 100%;
+}
+.msgs__container ul {
+  display: grid;
+  gap: 50px;
+}
+.msgs__msg {
+  width: 100%;
+  height: 150px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.0901960784);
+  box-sizing: border-box;
+  list-style: none;
+  padding: 20px;
+}
+
+.lightbluebtn {
+  color: #00d7e5;
+  background: transparent;
+  border: 1px solid #00d7e5;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.lightbluebtn:hover {
+  color: #ffffff;
+  background-color: #00d7e5;
+  border: 1px solid #009ce5;
 }
 
 body {

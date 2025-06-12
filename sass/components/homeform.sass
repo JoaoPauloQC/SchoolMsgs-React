@@ -1,0 +1,54 @@
+@use '../animations/fadedown'
+
+#root
+
+.content
+
+    &__container
+        position: relative
+        width: 100vw
+        overflow-x: hidden
+
+    .form
+        width: 100%
+        display: grid
+        height: 250px
+
+        form
+            height: 100%
+            padding: 20px
+            background-color: #fffffe
+            border: 0.25px solid #10cfe3
+            display: grid
+            grid-template-columns: auto
+            justify-content: center
+            justify-items: center
+            align-content: space-evenly
+            border-radius: 15px
+
+            input
+                width: 200px
+                border-radius: 5px
+                border: 1px solid #ebebeb
+                box-sizing: border-box
+                padding: 7.5px
+                height: 30px
+                outline: none
+                transition: 0.5s ease-out
+
+                &:hover
+                    border: 1px solid #10cfe3
+
+            button
+                border-radius: 12px
+                border: none
+                cursor: pointer
+                background-color: #1732a6
+                color: #ffffff
+                height: 30px
+                width: 100px
+                transition: 0.2s ease-out
+                &:hover
+                    border: 0.5px solid #1732a6
+                    background-color: transparent
+                    color: #1732a6
