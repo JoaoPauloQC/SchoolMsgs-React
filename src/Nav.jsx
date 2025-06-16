@@ -1,6 +1,12 @@
-import { Link } from 'react-router-dom';
+import { use, useEffect, useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 export default function Nav(){
+    let locate = useLocation()
+    console.log(locate)
+    
+    
+
     return(
         <>
             <div className="navbar">
@@ -8,9 +14,9 @@ export default function Nav(){
                     <div className='nav__container'>
                         <nav>
                             <ul>
-                                <Link to="/">Home</Link>
-                                <Link to="/msgs">Messages</Link>
-                                <Link to="/newmsg">+</Link>
+                                <Link to="/" id='/home' className={locate.pathname === '/'? 'active' : ''} >Home</Link>
+                                <Link to="/msgs" id='/msgs' className={locate.pathname === '/msgs'? 'active' : ''} >Messages</Link>
+                                <Link to="/newmsg" id='/newmsg'className={locate.pathname === '/newmsg'? 'active' : ''} >+</Link>
                             </ul>
                         </nav>
                     </div>

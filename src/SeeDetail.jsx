@@ -8,6 +8,7 @@ export default function SeeDetail(){
     const { id } = useParams()
     const iddecoded = decodeURI(id)
     console.log(iddecoded)
+   
     useEffect(()=>{
             async function fetchMsgs(){
                 try{
@@ -21,10 +22,12 @@ export default function SeeDetail(){
 
                             setmsg_(msg)
                             
+                            
                         }
                         
                         
                     })
+                    
                     
 
                     
@@ -40,17 +43,20 @@ export default function SeeDetail(){
                     wasfetched.current = true
                 }
             }
-    
+            console.log(msg_)
             fetchMsgs()
-    
+            
         },[])
 
     return (
+
         <div className="details wrapper">
             <div className="details__container">
                 <div className="details__card">
                     <div className="details__text">
                         <p>{msg_.name}</p>
+                        <br />
+                        <p>{msg_.user?.prontuario}</p>
                     </div>
                 </div>
             </div>

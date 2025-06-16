@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function NewMsg(){
+export default function NewMsg(props){
     
     const [name,setname] = useState()
     const navigate = useNavigate()
 
-    const data = {name}
+    const data = {"name": name, "prontuario": props.user.prontuario}
 
     function handlesubmit(event){
         event.preventDefault()
