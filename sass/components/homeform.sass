@@ -12,19 +12,26 @@
     .form
         width: 100%
         display: grid
-        height: 250px
+        height: 400px
 
         form
+            width: 70%
+            margin-left: auto
             height: 100%
+            box-sizing: border-box
             padding: 20px
             background-color: #fffffe
-            border: 0.25px solid #10cfe3
+            border: 0.1px solid #a8a8a863
             display: grid
             grid-template-columns: auto
             justify-content: center
             justify-items: center
             align-content: space-evenly
             border-radius: 15px
+            transition: 0.2s linear
+
+            &:hover
+                border: 0.1px solid #009daf63
 
             input
                 width: 200px
@@ -40,15 +47,17 @@
                     border: 1px solid #10cfe3
 
             button
-                border-radius: 12px
+                border-radius: 7.5px
                 border: none
                 cursor: pointer
-                background-color: #1732a6
-                color: #ffffff
+                font-family: Arial, Helvetica, sans-serif
+                background-color: #ffffff
+                color: #00ffff
+                border: 0.5px solid #00ffff
                 height: 30px
                 width: 100px
-                transition: 0.2s ease-out
+                transition: 0.3s ease-out
                 &:hover
-                    border: 0.5px solid #1732a6
-                    background-color: transparent
-                    color: #1732a6
+                    border: 0.5px solid
+                    background-color: #00e1ff
+                    color: #ffffff

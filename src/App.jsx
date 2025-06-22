@@ -10,6 +10,7 @@ import Home from './Home.jsx';
 import { useParams } from 'react-router-dom';
 import Ai from './AI.jsx';
 function App() {
+  
   const [logged , setlogged] = useState(false)
   const [user, setUser] = useState({"nome":"Visitante", "prontuario": "0"}) 
   const [ai_active, setAI_active] = useState(false)
@@ -43,6 +44,8 @@ function App() {
                 }
                 else{
                     alert('Algo aconteceu')
+                    setAI_active(true)
+                    setaifetched(true)
                 }
 
             }   catch(e){
@@ -61,11 +64,12 @@ function App() {
 
 
   return (
+    
     <Router>
      <Nav reset={reset}/> 
       <Routes>
         <Route path='/' element={<Home user={user} aifetched={aifetched} setAI_active = {setAI_active} setaifetched={setaifetched} ai_active={ai_active} changeuser={changeuser} />}/>
-        <Route path='/msgs' element={<Msgs />} />
+        <Route path='/msgs' element={<Msgs user={user} />} />
         <Route path='/newmsg' element={<NewMsg user={user} />}/>
         <Route path='/viewmsg/:id' element={<SeeDetail />}/>
         

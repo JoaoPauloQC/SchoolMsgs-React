@@ -1,12 +1,12 @@
 import { useState , useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Msg from "./Msg";
+
 
 export default function Msgs(){
     const [msgs,setmsgs] = useState([])
-    const navigate = useNavigate()
-    function handlebutton (msg){
-        navigate(`/viewmsg/${encodeURIComponent(msg.id)}`)
-    }
+    
+    
 
     useEffect(()=>{
         async function fetchMsgs(){
@@ -30,10 +30,7 @@ export default function Msgs(){
             <div className="wrapper">
                 <ul>
                     {msgs.map( msg =>(
-                        <div className="msgs__msg" key={msg.id} id={`msg ${msg.id}`}>
-                            <li value={msg.id}>{msg.name}</li>
-                            <button onClick={() => handlebutton(msg)} className="lightbluebtn">View Details</button>
-                        </div>
+                        <Msg msg={msg}/>
                     ))}
                 </ul>
             </div>
