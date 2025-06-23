@@ -3,7 +3,8 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 
 export default function Nav(props){
     let locate = useLocation()
-    console.log(locate)
+    console.log("the locate is " + locate.pathname)
+    console.log(locate.pathname === '/')
     console.log(props)
     function handleClick(){
         console.log("click")
@@ -18,9 +19,9 @@ export default function Nav(props){
                     <div className='nav__container'>
                         <nav>
                             <ul>
-                                <Link  to="/" id='/home' className={locate.pathname === '/'? 'active' : ''} >Home</Link>
-                                <Link onClick={handleClick} to="/msgs" id='/msgs' className={locate.pathname === '/msgs'? 'active' : ''} >Messages</Link>
-                                <Link onClick={handleClick} to="/newmsg" id='/newmsg'className={locate.pathname === '/newmsg'? 'active' : ''} >+</Link>
+                                <Link  to="/" id='/home' className={locate.pathname === '/'? 'nav-active' : ''} >Home</Link>
+                                <Link onClick={handleClick} to="/msgs" id='/msgs' className={locate.pathname === '/msgs'? 'nav-active' : ''} >Messages</Link>
+                                <Link onClick={handleClick} to="/newmsg" id='/newmsg'className={locate.pathname === '/newmsg'? 'nav-active' : ''} >+</Link>
                             </ul>
                         </nav>
                     </div>

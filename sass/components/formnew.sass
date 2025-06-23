@@ -4,13 +4,28 @@
     justify-content: center
     padding: 50px
     box-sizing: border-box
-    border: 1px solid #00d7e5
+
     border-radius: 20px
     width: 400px
     height: 400px
     margin-left: auto
     margin-right: auto
+    border: 0.1px solid #a8a8a863
+    transition: 0.3s linear
+    animation: lefttoright 0.75s ease-in-out
+    &:hover
+        border: 0.1px solid #009daf63
 
+    &__text
+        align-content: center
+        width: 100%
+        font-size: 2rem
+        display: flex
+        gap: 5px
+
+        .plusicon
+            padding-top: 2px
+            color: #00d7e5
     form
         display: grid
         width: 300px
@@ -19,7 +34,7 @@
         justify-items: center
         align-items: center
         p
-            text-align: center
+            text-align: start
 
         input
             width: 300px

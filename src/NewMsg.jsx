@@ -45,7 +45,7 @@ export default function NewMsg(props){
         <div className="formnew">
             <form action="" onSubmit={handlesubmit}>
 
-                <p>Type your new msg</p>
+                <div className="formnew__text"><p>New msg</p><div className="plusicon">+</div></div>
                 <input type="text" onChange={(e) => (setname(e.target.value))} value={name} name="input" />
                 <button type="submit" onClick={handlesubmit}>send</button>
             </form>

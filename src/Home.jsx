@@ -4,7 +4,7 @@ import { useState } from "react"
 import App from "./App"
 
 export default function Home(props){
-  <title>a</title>
+  
     console.log(props)
 
     function change(n,p){
